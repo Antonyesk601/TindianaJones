@@ -179,7 +179,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 567
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -490,7 +490,7 @@ GameObject:
   - component: {fileID: 1196849547}
   - component: {fileID: 1196849546}
   - component: {fileID: 1196849548}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -915,13 +915,12 @@ GameObject:
   - component: {fileID: 1854867491}
   - component: {fileID: 1854867490}
   - component: {fileID: 1854867489}
-  - component: {fileID: 1854867488}
   - component: {fileID: 1854867487}
-  - component: {fileID: 1854867492}
   - component: {fileID: 1854867486}
+  - component: {fileID: 1854867492}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -963,19 +962,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &1854867488
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1854867485}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb6a00d90c33a3d4ab1177dbb2882b1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
 --- !u!95 &1854867489
 Animator:
   serializedVersion: 3
@@ -1069,7 +1055,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1854867485}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb6a00d90c33a3d4ab1177dbb2882b1a, type: 3}
+  m_Script: {fileID: 11500000, guid: 20eb6c91c620b8741ac6c8ff1964db77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  jump: 10
+  platformMask:
+    serializedVersion: 2
+    m_Bits: 512

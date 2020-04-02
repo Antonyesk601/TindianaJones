@@ -5,20 +5,26 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(SpriteRenderer))]
-public class Movement : MonoBehaviour
+[RequireComponent(typeof(Collider2D))]
+public class PlayerMovement : MonoBehaviour
 {
     public float speed = 5.0f;
+    public float jump = 2.0f;
+    [SerializeField]
+    LayerMask platformMask;
 
     private Rigidbody2D rigidBody;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
     private bool isLeft = false;
+    private Collider2D playerCollider;
 
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        playerCollider = GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
@@ -36,6 +42,29 @@ public class Movement : MonoBehaviour
 
         spriteRenderer.flipX = isLeft;
 
+        if (isGrounded())
+        {
+            rigidBody.velocity += Vector2.up * Input.GetAxis("Jump") * jump;
+        }
+    }
 
+    private bool isGrounded()
+    {
+        float extraHeight = 0.01f;
+        RaycastHit2D raycastHit = Physics2D.Raycast(playerCollider.bounds.center, Vector2.down, playerCollider.bounds.extents.y + extraHeight, platformMask);
+
+        Color rayColor;
+        if(raycastHit.collider != null)
+        {
+            rayColor = Color.red;
+        }
+        else
+        {
+            rayColor = Color.green;
+        }
+        //Debug.Log(raycastHit.collider);
+
+        Debug.DrawRay(playerCollider.bounds.center, Vector2.down * (playerCollider.bounds.extents.y + extraHeight), rayColor);
+        return raycastHit.collider != null;
     }
 }
