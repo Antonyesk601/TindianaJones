@@ -3,22 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class tilemapGenerator : MonoBehaviour
+public class TilemapGenerator : MonoBehaviour
 {
-    public Grid grid;
-    public List<Tilemap> Environment= new List<Tilemap>();
-    public int levelWidth;
-    public int levelheight;
-    public Tile main;
-    // Start is called before the first frame update
+    [SerializeField]
+    private Grid grid;
+    [SerializeField]
+    private List<Tilemap> Environment= new List<Tilemap>();
+    [SerializeField]
+    private int levelWidth;
+    [SerializeField]
+    private int levelheight;
+    [SerializeField]
+    private Tile main;
+
+
     void Start()
     {
         generateplatform(levelheight,levelWidth);
         
     }
+
     void generateplatform(int height, int width)
     {
         Environment[0].BoxFill(new Vector3Int(0, 0, 0), main, 0, 0, width, height); 
     }
-    
 }

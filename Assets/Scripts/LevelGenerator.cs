@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class generatelevel : MonoBehaviour
+public class LevelGenerator : MonoBehaviour
 {
-    public List<GameObject> environmentSprites = new List<GameObject>();
+    [SerializeField]
+    private List<GameObject> environmentSprites = new List<GameObject>();
     public float length;
     public float width;
+
     void Start()
     {
         generateWalls();
