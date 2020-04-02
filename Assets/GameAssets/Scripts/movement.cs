@@ -7,6 +7,7 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
 public class Movement : MonoBehaviour
 {
+    public float speed = 5.0f;
 
     private Rigidbody2D rigidBody;
     private Animator animator;
