@@ -161,11 +161,13 @@ MonoBehaviour:
   levelheight: 10
   maxLevelHeight:
   - 1
-  - 10
+  - 50
   maxLevelWidth:
-  - 1
-  - 10
-  main: {fileID: 11400000, guid: 0ea444263e30d114d9b6db6e3a1ce077, type: 2}
+  - 25
+  - 50
+  platformlength: 
+  main: {fileID: 11400000, guid: c9589f29e922f4848b546ad3d7f2c738, type: 2}
+  mm: {fileID: 11400000, guid: 45b6656eabae6d1449f2a7faf985ac73, type: 2}
 --- !u!61 &245161295
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -292,7 +294,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &282768343
 Transform:
   m_ObjectHideFlags: 0
@@ -592,7 +594,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &314720952
 Transform:
   m_ObjectHideFlags: 0
@@ -1359,7 +1361,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1380970231
 Transform:
   m_ObjectHideFlags: 0
