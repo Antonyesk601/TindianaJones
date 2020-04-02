@@ -156,9 +156,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grid: {fileID: 907044467}
   Environment:
-  - {fileID: 1380970233}
+  - {fileID: 1111534980}
   levelWidth: 10
   levelheight: 10
+  maxLevelHeight:
+  - 1
+  - 10
+  maxLevelWidth:
+  - 1
+  - 10
   main: {fileID: 11400000, guid: 0ea444263e30d114d9b6db6e3a1ce077, type: 2}
 --- !u!61 &245161295
 BoxCollider2D:
