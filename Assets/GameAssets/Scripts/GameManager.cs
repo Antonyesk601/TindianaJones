@@ -5,13 +5,27 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance { get; private set; }
+    public static GameManager Instance { 
+        get { 
+            if(instance == null)
+            {
+                var gameObject = new GameObject("GameManager", typeof(GameManager));
+                instance = gameObject.GetComponent<GameManager>();
+            }
+
+            return instance;
+        } 
+        private set => instance = value; 
+    }
 
     public int lives = 3;
     public int score = 0;
     public int highScore = 0;
+    public int whips = 0;
 
     private int _level = 0;
+    private static GameManager instance;
+
     public int level
     {
         get => _level; set
@@ -20,7 +34,7 @@ public class GameManager : MonoBehaviour
             _level = value;
         }
     }
-    // Start is called before the first frame update
+
     void Start()
     {
         Instance = this;
