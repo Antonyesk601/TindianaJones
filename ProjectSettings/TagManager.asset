@@ -6,6 +6,7 @@ TagManager:
   tags:
   - UIDeath
   - whip
+  - UIMenu
   layers:
   - Default
   - TransparentFX
