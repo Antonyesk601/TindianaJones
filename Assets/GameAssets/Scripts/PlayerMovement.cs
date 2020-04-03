@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isLeft = false;
     private Collider2D playerCollider;
     private GameManager gm;
+    public bool isWhipping;
 
     void Start()
     {
@@ -74,8 +75,28 @@ public class PlayerMovement : MonoBehaviour
             rayColor = Color.green;
         }
         //Debug.Log(raycastHit.collider);
-
+     
         Debug.DrawRay(playerCollider.bounds.center, Vector2.down * (playerCollider.bounds.extents.y + extraHeight), rayColor);
         return raycastHit.collider != null;
+        
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (Input.GetKey(KeyCode.X))
+        {
+            isWhipping = false;
+            animator.SetBool("isWhipping", isWhipping);
+            Debug.Log("here");
+            if (other.tag=="whip")
+            {
+                isWhipping = true;
+                animator.SetBool("isWhipping", isWhipping);
+                animator.Play("whip");
+            }
+            else
+            {
+                isWhipping = false;
+            }
+        }
     }
 }
