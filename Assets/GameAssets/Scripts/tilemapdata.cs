@@ -8,4 +8,6 @@ public class tilemapdata
     public int xCoordinates { get; set; }
     [SerializeField]
     public int yCoordinates { get; set; }
+    [SerializeField]
+    public int currentgrid { get; set; }
 }

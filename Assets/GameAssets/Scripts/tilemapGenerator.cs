@@ -16,10 +16,11 @@ public class TilemapGenerator : MonoBehaviour
     public Tile bg;
     public Tile bgn;
     int previousheight;
-    public GameObject player;
+    public Tile player;
     public List<tilemapdata> tilelocations = new List<tilemapdata>();
     int environmentidentifier;
     float environemntchance;
+    tilemapdata spawnposition;
 
     void Start()
     {
@@ -28,14 +29,17 @@ public class TilemapGenerator : MonoBehaviour
         generateplatform(levelheight, levelWidth);
         generateplatformnd(levelheight, levelWidth);
         generatebackground(Mathf.CeilToInt(maxLevelWidth[1]), Mathf.CeilToInt(maxLevelHeight[1]));
+        Environment[0].SetTile(new Vector3Int(Mathf.CeilToInt(spawnposition.xCoordinates+player.sprite.rect.width/100/2), Mathf.CeilToInt(spawnposition.yCoordinates + player.sprite.rect.height/ 100 / 2), 0),player);
     }
 
     void generateplatform(int height, int width)
     {
+        bool positiongot = false;
        
         for (int i = 0; i < width; i++)
         {
-            var result = Random.Range(0, 2) * 2 - 1;
+
+            var result = Random.Range(0, 1) * 2 - 1;
              environemntchance = Random.Range(0f, 100f);
             if(environemntchance<33.3)
             {
@@ -51,17 +55,25 @@ public class TilemapGenerator : MonoBehaviour
             }
             if (previousheight == 0)
             {
-
-                levelheight = Mathf.CeilToInt(Random.Range(maxLevelHeight[0], maxLevelHeight[1]));
-                height = levelheight;
-                Environment[environmentidentifier].SetTile(new Vector3Int(i, height, Mathf.CeilToInt(gameObject.transform.position.z)), main);
-                tilelocations.Add(new tilemapdata { xCoordinates= i,yCoordinates=height});
-                previousheight = height;
                 if (i == 0)
                 {
-                    player.transform.position = new Vector3Int(i + Mathf.CeilToInt(player.transform.localScale.x / 2), height + Mathf.CeilToInt(player.transform.localScale.x / 2), Mathf.CeilToInt(gameObject.transform.position.z));
-                }
+                    Environment[0].SetTile(new Vector3Int(i, height, Mathf.CeilToInt(gameObject.transform.position.z)), main);
+                    tilelocations.Add(new tilemapdata { xCoordinates = i, yCoordinates =  height, currentgrid = environmentidentifier });
+                    spawnposition = tilelocations[0];
+                    positiongot = true;
+                        
 
+                }
+                else
+                {
+                    levelheight = Mathf.CeilToInt(Random.Range(maxLevelHeight[0], maxLevelHeight[1]));
+                    height = levelheight;
+                    Environment[environmentidentifier].SetTile(new Vector3Int(i, height, Mathf.CeilToInt(gameObject.transform.position.z)), main);
+                    tilelocations.Add(new tilemapdata { xCoordinates = i, yCoordinates = height, currentgrid = environmentidentifier });
+                    previousheight = height;
+                    
+
+                }
             }
 
             else
@@ -70,62 +82,90 @@ public class TilemapGenerator : MonoBehaviour
                 for (int n = 0; n < platform; n++)
                 {
                     Environment[environmentidentifier].SetTile(new Vector3Int(n + i, previousheight, Mathf.CeilToInt(gameObject.transform.position.z)), main);
-                    tilelocations.Add(new tilemapdata { xCoordinates = i,yCoordinates = height});
-    }
+                    tilelocations.Add(new tilemapdata { xCoordinates = i, yCoordinates = height });
+                }
                 i = i + platform;
                 previousheight = 0;
             }
-            float environmentchanceoffset = environemntchance - result*Random.Range(0f,height); 
+            float environmentchanceoffset = environemntchance - result*Random.Range(20f,30f); 
         }
 
     }
     void generateplatformnd(int height, int width)
     {
         environemntchance = Random.Range(0f, 100f);
-        if (environemntchance >= 50)
+        if (environemntchance < 33.3)
         {
             environmentidentifier = 1;
         }
-        else
+        else if (environemntchance >= 33.3f && environemntchance < 66.6f)
         {
             environmentidentifier = 0;
         }
+        else if (environemntchance >= 66.6f)
+        {
+            environmentidentifier = 2;
+        }
         for (int i = 0; i < width; i++)
         {
-            Debug.Log(tilelocations[i].xCoordinates+" "+tilelocations[i].yCoordinates);
-            levelheight = Mathf.CeilToInt(Random.Range(maxLevelHeight[0], maxLevelHeight[1]));
-            if (Mathf.Abs(levelheight - (tilelocations[i].yCoordinates)) > 2)
+            if (i<tilelocations.Count) 
             {
-                if (previousheight == 0)
+                levelheight = Mathf.CeilToInt(Random.Range(maxLevelHeight[0], maxLevelHeight[1]));
+                if (Mathf.Abs(levelheight - tilelocations[i].yCoordinates) > 2)
                 {
-
-                    height = levelheight;
-                    Environment[environmentidentifier].SetTile(new Vector3Int(i, height, Mathf.CeilToInt(gameObject.transform.position.z)), main);
-                    previousheight = height;
-                    if (i == 0)
+                    if (previousheight == 0)
                     {
-                        player.transform.position = new Vector3Int(i + Mathf.CeilToInt(player.transform.localScale.x / 2), height + Mathf.CeilToInt(player.transform.localScale.x / 2), Mathf.CeilToInt(gameObject.transform.position.z));
+
+                        height = levelheight;
+                        Environment[environmentidentifier].SetTile(new Vector3Int(i, height, Mathf.CeilToInt(gameObject.transform.position.z)), main);
+                        previousheight = height;
+                      
+
                     }
 
+                    else
+                    {
+
+                        int platform = Mathf.FloorToInt(Random.Range(platformlength[0], platformlength[1]));
+                        for (int n = 0; n < platform; n++)
+                        {
+                            Environment[environmentidentifier].SetTile(new Vector3Int(n + i, previousheight, Mathf.CeilToInt(gameObject.transform.position.z)), main);
+                        }
+                        i = i + platform;
+                        previousheight = 0;
+                    }
                 }
 
                 else
                 {
-                    
+                    height = Mathf.CeilToInt(Random.Range(Mathf.Abs(levelheight - tilelocations[i].yCoordinates), Mathf.CeilToInt(Mathf.Abs(levelheight + tilelocations[i].yCoordinates))));
+                    Environment[environmentidentifier].SetTile(new Vector3Int(i, height, Mathf.CeilToInt(gameObject.transform.position.z)), main);
+                }
+            }
+            else
+            {
+                if (previousheight == 0)
+                {
+
+                    levelheight = Mathf.CeilToInt(Random.Range(maxLevelHeight[0], maxLevelHeight[1]));
+                    height = levelheight;
+                    Environment[environmentidentifier].SetTile(new Vector3Int(i, height, Mathf.CeilToInt(gameObject.transform.position.z)), main);
+                    tilelocations.Add(new tilemapdata { xCoordinates = i, yCoordinates = height });
+                    previousheight = height;
+                   
+                }
+
+                else
+                {
                     int platform = Mathf.FloorToInt(Random.Range(platformlength[0], platformlength[1]));
                     for (int n = 0; n < platform; n++)
                     {
                         Environment[environmentidentifier].SetTile(new Vector3Int(n + i, previousheight, Mathf.CeilToInt(gameObject.transform.position.z)), main);
+                        tilelocations.Add(new tilemapdata { xCoordinates = i, yCoordinates = height });
                     }
                     i = i + platform;
                     previousheight = 0;
                 }
-            }
-
-            else
-            {
-                height = Mathf.CeilToInt(Random.Range(Mathf.Abs(levelheight - tilelocations[i].yCoordinates), Mathf.CeilToInt(Mathf.Abs(levelheight + tilelocations[i].yCoordinates))));
-                Environment[environmentidentifier].SetTile(new Vector3Int(i, height, Mathf.CeilToInt(gameObject.transform.position.z)), main);
             }
         }
     }
