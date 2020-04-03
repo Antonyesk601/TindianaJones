@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -22,6 +23,7 @@ public class GameManager : MonoBehaviour
     public int score = 0;
     public int highScore = 0;
     public int whips = 0;
+    public bool isControllable = true;
 
     private int _level = 0;
     private static GameManager instance;
@@ -32,6 +34,10 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadSceneAsync(value);
             _level = value;
+            if(value != 0)
+            {
+                isControllable = true;
+            }
         }
     }
 
@@ -46,4 +52,17 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 
+
+    public void Die()
+    {
+        lives--;
+        isControllable = false;
+        GameObject.FindWithTag("UIDeath").GetComponent<Canvas>().enabled = true;
+    }
+
+    public void Retry()
+    {
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
+        isControllable = true;
+    }
 }

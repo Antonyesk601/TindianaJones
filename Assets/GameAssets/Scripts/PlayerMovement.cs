@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private bool isLeft = false;
     private Collider2D playerCollider;
+    private GameManager gm;
 
     void Start()
     {
@@ -25,26 +26,36 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         playerCollider = GetComponent<Collider2D>();
+        gm = GameManager.Instance;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        float movingSpeed = Input.GetAxis("Horizontal") * speed;
-
-        rigidBody.velocity = Vector2.right * movingSpeed + Vector2.up * rigidBody.velocity.y;
-
-        animator.SetFloat("speed", Mathf.Abs(rigidBody.velocity.x));
-        if (rigidBody.velocity.x < 0)
-            isLeft = true;
-        else if (rigidBody.velocity.x > 0)
-            isLeft = false;
-
-        spriteRenderer.flipX = isLeft;
-
-        if (isGrounded())
+        if (gm.isControllable)
         {
-            rigidBody.velocity += Vector2.up * Input.GetAxis("Jump") * jump;
+            if (Input.GetButtonDown("Cancel"))
+            {
+                gm.isControllable = false;
+                GameObject.FindWithTag("UIMenu").GetComponent<Canvas>().enabled = true;
+            }
+
+            float movingSpeed = Input.GetAxis("Horizontal") * speed;
+
+            rigidBody.velocity = Vector2.right * movingSpeed + Vector2.up * rigidBody.velocity.y;
+
+            animator.SetFloat("speed", Mathf.Abs(rigidBody.velocity.x));
+            if (rigidBody.velocity.x < 0)
+                isLeft = true;
+            else if (rigidBody.velocity.x > 0)
+                isLeft = false;
+
+            spriteRenderer.flipX = isLeft;
+
+            if (isGrounded())
+            {
+                rigidBody.velocity += Vector2.up * Input.GetAxis("Jump") * jump;
+            }
         }
     }
 
