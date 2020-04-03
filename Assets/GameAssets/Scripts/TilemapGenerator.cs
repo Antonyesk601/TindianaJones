@@ -39,7 +39,6 @@ public class TilemapGenerator : MonoBehaviour
         for (int i = 0; i < width; i++)
         {
 
-            var result = Random.Range(0, 1) * 2 - 1;
              environemntchance = Random.Range(0f, 100f);
             if(environemntchance<33.3)
             {
@@ -60,7 +59,6 @@ public class TilemapGenerator : MonoBehaviour
                     Environment[0].SetTile(new Vector3Int(i, height, Mathf.CeilToInt(gameObject.transform.position.z)), main);
                     tilelocations.Add(new tilemapdata { xCoordinates = i, yCoordinates =  height, currentgrid = environmentidentifier });
                     spawnposition = tilelocations[0];
-                        
 
                 }
                 else
@@ -86,7 +84,6 @@ public class TilemapGenerator : MonoBehaviour
                 i = i + platform;
                 previousheight = 0;
             }
-            float environmentchanceoffset = environemntchance - result*Random.Range(20f,30f); 
         }
 
     }
@@ -168,7 +165,7 @@ public class TilemapGenerator : MonoBehaviour
             }
         }
     }
-/*    void generateladder(int width, int height)
+void generateladder(int width, int height)
     { 
         for(int identity=0; identity < 3; identity++)
         {
@@ -196,7 +193,7 @@ public class TilemapGenerator : MonoBehaviour
             }
             
         }
-    }*/
+    }
         void generatebackground(int width, int height)
         {
             for (int i = 0; i < height; i++)
