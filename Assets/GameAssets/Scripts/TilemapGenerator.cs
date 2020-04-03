@@ -168,22 +168,35 @@ public class TilemapGenerator : MonoBehaviour
             }
         }
     }
-        void generateladder()
+/*    void generateladder(int width, int height)
+    { 
+        for(int identity=0; identity < 3; identity++)
         {
-           environemntchance = Random.Range(0f, 100f);
-             if (environemntchance < 33.3)
-        {
-            environmentidentifier = 1;
+            environemntchance = Random.Range(0f, 100f);
+            if (environemntchance < 33.3)
+            {
+                environmentidentifier = 1;
+            }
+            else if (environemntchance >= 33.3f && environemntchance < 66.6f)
+            {
+                environmentidentifier = 0;
+            }
+            else if (environemntchance >= 66.6f)
+            {
+                environmentidentifier = 2;
+            }
+            for (int i = 0; i < width; i++)
+        {   
+            for (int n = 0; n < height-1; n++)
+            {
+                    if (Environment[identity].GetTile(new Vector3Int(i,n,0))&& Environment[identity].GetTile(new Vector3Int(i+1, n, 0)))
+                    {
+                    }
+                }
+            }
+            
         }
-        else if (environemntchance >= 33.3f && environemntchance < 66.6f)
-        {
-            environmentidentifier = 0;
-        }
-        else if (environemntchance >= 66.6f)
-        {
-            environmentidentifier = 2;
-        }
-        }
+    }*/
         void generatebackground(int width, int height)
         {
             for (int i = 0; i < height; i++)
