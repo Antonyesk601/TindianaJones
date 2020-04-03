@@ -56,8 +56,20 @@ TextureImporter:
   - first:
       213: 7269114067120790529
     second: TINDIANASHEET_17
+<<<<<<< HEAD
+=======
+  - first:
+      213: -6445975160250127021
+    second: TINDIANASHEET_18
+  - first:
+      213: -4243295025689872702
+    second: TINDIANASHEET_19
+  - first:
+      213: 3191691932718228031
+    second: TINDIANASHEET_20
+>>>>>>> edits
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -111,6 +123,7 @@ TextureImporter:
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  applyGammaDecoding: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -553,10 +566,80 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+<<<<<<< HEAD
     outline: []
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
+=======
+    - serializedVersion: 2
+      name: TINDIANASHEET_18
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 1
+        width: 16
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35dac467ebb4b86a0800000000000000
+      internalID: -6445975160250127021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TINDIANASHEET_19
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 2
+        width: 17
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c6b294f7a9cc15c0800000000000000
+      internalID: -4243295025689872702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TINDIANASHEET_20
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 2
+        width: 19
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f32662a07ea2b4c20800000000000000
+      internalID: 3191691932718228031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 9856cb16bad2fd34faf18e9e9d9bcc2e
+>>>>>>> edits
     internalID: 0
     vertices: []
     indices: 
