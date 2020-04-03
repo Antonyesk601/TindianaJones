@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(SpriteRenderer))]
-public class Movement : MonoBehaviour
+public class movement : MonoBehaviour
 {
 
     private Rigidbody2D rigidBody;
