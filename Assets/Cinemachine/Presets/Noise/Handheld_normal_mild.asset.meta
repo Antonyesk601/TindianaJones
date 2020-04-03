@@ -1,11 +1,7 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Assets/2d-extras-master/Editor/Brushes/Spike.asset.meta
-guid: a77cae37cdcfb46449ae1b0fdaa9da88
-=======
 guid: 46965f9cbaf525742a6da4c2172a99cd
 timeCreated: 1461691296
 licenseType: Store
->>>>>>> Some changes:Assets/Cinemachine/Presets/Noise/Handheld_normal_mild.asset.meta
 NativeFormatImporter:
   userData: 
   assetBundleName: 

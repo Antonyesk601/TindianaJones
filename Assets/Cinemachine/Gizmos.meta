@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Assets/2d-extras-master/Editor/Brushes.meta
-guid: 2039e1dc3b9ffd0438fb81184304c782
-=======
-guid: d9ca844c06be1ab40a3f7fc9e3c42c55
->>>>>>> Some changes:Assets/Cinemachine/Gizmos.meta
+guid: 47a9092620d2f5242a12936653b13cfe
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

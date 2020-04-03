@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Assets/2d-extras-master/Editor.meta
-guid: 51dafd27a18ea6f46860fe48234f746b
-=======
-guid: 8786806e37330e349b5885f2972851b6
->>>>>>> Some changes:Assets/Cinemachine/Base.meta
+guid: 6dc5af033b0620e4bbd089305344fb49
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

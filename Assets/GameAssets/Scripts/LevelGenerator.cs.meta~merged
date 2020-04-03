@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<<< HEAD:Assets/GameAssets/Scripts/LevelGenerator.cs.meta
+guid: ddb8264dc6a50774881f5140bc4e30d6
+========
+guid: ea685cb7c649a334e9dff4b475003eaa
+>>>>>>>> 4aec94a1f7a7f6d137bce9680b5856721cb5b40d:Assets/Scripts/movement.cs.meta
+=======
+guid: ddb8264dc6a50774881f5140bc4e30d6
+>>>>>>> 4aec94a1f7a7f6d137bce9680b5856721cb5b40d
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

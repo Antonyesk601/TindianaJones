@@ -1,13 +1,8 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Assets/BayatGames/Free Platform Game Assets/Readme.txt.meta
-guid: c310bb72bcb1e04448ba930fe5d5f4cc
-timeCreated: 1489846241
-=======
-guid: 20a705aea2d80e0478fb89b6f43d8530
-timeCreated: 1465497741
->>>>>>> Some changes:Assets/Cinemachine/Presets/Noise/Handheld_normal_extreme.asset.meta
+guid: b241f91b9ccf8ff489abf204b30d3112
+timeCreated: 1461691296
 licenseType: Store
-TextScriptImporter:
+NativeFormatImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
