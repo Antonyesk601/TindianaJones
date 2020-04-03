@@ -6,29 +6,28 @@ public class CameraBehaviour : MonoBehaviour
 {
     public Camera maincam;
     public Camera glitchcam;
-    bool x;
+
     private void Start()
     {
         StartCoroutine(screenglitch());
-        x = true;
+
     }
 
 
     IEnumerator screenglitch()
     {
-        while (x) {
+        for (int i = 0; i < 10; i++)
+        {
             glitchcam.gameObject.transform.position = maincam.gameObject.transform.position;
             glitchcam.gameObject.transform.rotation = maincam.gameObject.transform.rotation;
-            yield return new WaitForSecondsRealtime(10);
+            yield return new WaitForSecondsRealtime(5);
             maincam.gameObject.SetActive(false);
             glitchcam.gameObject.SetActive(true);
-            yield return new WaitForSecondsRealtime(2);
+            yield return new WaitForSecondsRealtime(0.5f);
             maincam.gameObject.SetActive(true);
             glitchcam.gameObject.SetActive(false);
-
-        } 
+            i--;
+        }
     }
-
-    }
-
+}
 
