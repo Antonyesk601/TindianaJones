@@ -16,7 +16,7 @@ public class TilemapGenerator : MonoBehaviour
     public Tile bg;
     public Tile bgn;
     int previousheight;
-    public Tile player;
+    public GameObject player;
     public List<tilemapdata> tilelocations = new List<tilemapdata>();
     int environmentidentifier;
     float environemntchance;
@@ -29,7 +29,8 @@ public class TilemapGenerator : MonoBehaviour
         generateplatform(levelheight, levelWidth);
         generateplatformnd(levelheight, levelWidth);
         generatebackground(Mathf.CeilToInt(maxLevelWidth[1]), Mathf.CeilToInt(maxLevelHeight[1]));
-        Environment[0].SetTile(new Vector3Int(Mathf.CeilToInt(spawnposition.xCoordinates+player.sprite.rect.width/100/2), Mathf.CeilToInt(spawnposition.yCoordinates + player.sprite.rect.height/ 100 / 2), 0),player);
+        Vector3 playerspawn=Environment[0].CellToWorld(new Vector3Int(Mathf.CeilToInt(spawnposition.xCoordinates), Mathf.CeilToInt(spawnposition.yCoordinates), 0));
+        player.transform.position = new Vector3(playerspawn.x + player.transform.lossyScale.x/2, playerspawn.y + 2*player.transform.lossyScale.y , 0);
     }
 
     void generateplatform(int height, int width)
