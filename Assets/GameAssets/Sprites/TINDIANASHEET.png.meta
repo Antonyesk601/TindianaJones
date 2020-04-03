@@ -129,7 +129,7 @@ TextureImporter:
       213: -7520524613720584195
     second: TINDIANASHEET_20
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -183,6 +183,7 @@ TextureImporter:
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  applyGammaDecoding: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -251,10 +252,10 @@ TextureImporter:
       name: TINDIANASHEET_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 65
-        width: 16
-        height: 31
+        x: 0
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -272,10 +273,10 @@ TextureImporter:
       name: TINDIANASHEET_1
       rect:
         serializedVersion: 2
-        x: 38
-        y: 65
-        width: 16
-        height: 31
+        x: 32
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -293,10 +294,10 @@ TextureImporter:
       name: TINDIANASHEET_2
       rect:
         serializedVersion: 2
-        x: 70
-        y: 65
-        width: 16
-        height: 31
+        x: 64
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -314,10 +315,10 @@ TextureImporter:
       name: TINDIANASHEET_3
       rect:
         serializedVersion: 2
-        x: 102
-        y: 65
-        width: 16
-        height: 31
+        x: 96
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -335,10 +336,10 @@ TextureImporter:
       name: TINDIANASHEET_4
       rect:
         serializedVersion: 2
-        x: 134
-        y: 65
-        width: 16
-        height: 31
+        x: 128
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -356,10 +357,10 @@ TextureImporter:
       name: TINDIANASHEET_5
       rect:
         serializedVersion: 2
-        x: 166
-        y: 65
-        width: 17
-        height: 31
+        x: 160
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -377,10 +378,10 @@ TextureImporter:
       name: TINDIANASHEET_6
       rect:
         serializedVersion: 2
-        x: 198
-        y: 65
-        width: 19
-        height: 31
+        x: 192
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -398,10 +399,10 @@ TextureImporter:
       name: TINDIANASHEET_7
       rect:
         serializedVersion: 2
-        x: 230
-        y: 65
-        width: 17
-        height: 31
+        x: 224
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -419,10 +420,10 @@ TextureImporter:
       name: TINDIANASHEET_8
       rect:
         serializedVersion: 2
-        x: 6
-        y: 33
-        width: 16
-        height: 31
+        x: 0
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -440,10 +441,10 @@ TextureImporter:
       name: TINDIANASHEET_9
       rect:
         serializedVersion: 2
-        x: 38
-        y: 33
-        width: 18
-        height: 31
+        x: 32
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -461,10 +462,10 @@ TextureImporter:
       name: TINDIANASHEET_10
       rect:
         serializedVersion: 2
-        x: 70
-        y: 33
-        width: 18
-        height: 31
+        x: 64
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -482,10 +483,10 @@ TextureImporter:
       name: TINDIANASHEET_11
       rect:
         serializedVersion: 2
-        x: 102
-        y: 33
-        width: 18
-        height: 31
+        x: 96
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -503,10 +504,10 @@ TextureImporter:
       name: TINDIANASHEET_12
       rect:
         serializedVersion: 2
-        x: 134
-        y: 33
-        width: 21
-        height: 31
+        x: 128
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -524,10 +525,10 @@ TextureImporter:
       name: TINDIANASHEET_13
       rect:
         serializedVersion: 2
-        x: 166
-        y: 33
-        width: 24
-        height: 31
+        x: 160
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -545,10 +546,10 @@ TextureImporter:
       name: TINDIANASHEET_14
       rect:
         serializedVersion: 2
-        x: 198
-        y: 33
-        width: 24
-        height: 31
+        x: 192
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -566,10 +567,10 @@ TextureImporter:
       name: TINDIANASHEET_15
       rect:
         serializedVersion: 2
-        x: 230
-        y: 33
-        width: 25
-        height: 31
+        x: 224
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -587,10 +588,10 @@ TextureImporter:
       name: TINDIANASHEET_16
       rect:
         serializedVersion: 2
-        x: 262
-        y: 33
-        width: 25
-        height: 31
+        x: 256
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -608,10 +609,10 @@ TextureImporter:
       name: TINDIANASHEET_17
       rect:
         serializedVersion: 2
-        x: 294
-        y: 33
-        width: 26
-        height: 31
+        x: 288
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -621,69 +622,6 @@ TextureImporter:
       bones: []
       spriteID: 272cf2078070e6e80800000000000000
       internalID: -8183595740062301582
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TINDIANASHEET_18
-      rect:
-        serializedVersion: 2
-        x: 6
-        y: 1
-        width: 16
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3ee13351d112db0e0800000000000000
-      internalID: -2252607829821939997
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TINDIANASHEET_19
-      rect:
-        serializedVersion: 2
-        x: 38
-        y: 2
-        width: 17
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2067f2da13ba3a9e0800000000000000
-      internalID: -1611256011821189630
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TINDIANASHEET_20
-      rect:
-        serializedVersion: 2
-        x: 70
-        y: 2
-        width: 19
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dff4a9295bab1a790800000000000000
-      internalID: -7520524613720584195
       vertices: []
       indices: 
       edges: []
