@@ -36,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (Input.GetButtonDown("Cancel"))
             {
+                Debug.Log("Paused");
                 gm.isControllable = false;
                 GameObject.FindWithTag("UIMenu").GetComponent<Canvas>().enabled = true;
             }
