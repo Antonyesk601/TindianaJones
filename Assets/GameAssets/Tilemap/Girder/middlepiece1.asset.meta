@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/GameAssets/Tilemap/Girder/middlepiece1.asset.meta
 guid: 85d88f6e00843f04ab5e14e71d5ed259
+=======
+guid: 0cdba0166574a874289e5eef60877225
+>>>>>>> Some changes:Assets/GameAssets/Tilemap/middlepiece1.asset.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 0

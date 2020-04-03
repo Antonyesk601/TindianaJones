@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/GameAssets/Tilemap/Girder/spikeee.asset.meta
 guid: 72a33eb648a5fbe41ab2a67c28d46837
+=======
+guid: 8f0885baa07ad814fa8b87c3569713a4
+>>>>>>> Some changes:Assets/GameAssets/Tilemap/spikeee.asset.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 0

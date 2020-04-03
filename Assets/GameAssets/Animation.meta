@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/GameAssets/Animation.meta
 guid: 47a9092620d2f5242a12936653b13cfe
+=======
+guid: d9ca844c06be1ab40a3f7fc9e3c42c55
+>>>>>>> 4aec94a1f7a7f6d137bce9680b5856721cb5b40d:Assets/Cinemachine/Gizmos.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

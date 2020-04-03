@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/GameAssets/Tilemap/Girder/leftend.asset.meta
 guid: 8d908922260ab3748aa5eae1fee0171c
+=======
+guid: e808baa4800c52640b91d415a46691c0
+>>>>>>> Some changes:Assets/GameAssets/Tilemap/leftend.asset.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 0

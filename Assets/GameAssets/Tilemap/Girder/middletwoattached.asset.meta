@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/GameAssets/Tilemap/Girder/middletwoattached.asset.meta
 guid: 55024a3b2d021be4799c2d2308238443
+=======
+guid: d270227d7da83794bb3cb5c26b1b24b3
+>>>>>>> Some changes:Assets/GameAssets/Tilemap/middletwoattached.asset.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 0

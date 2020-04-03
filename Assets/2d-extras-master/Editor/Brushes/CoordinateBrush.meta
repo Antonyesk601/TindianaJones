@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/2d-extras-master/Editor/Brushes/CoordinateBrush.meta
 guid: f770bfc3e11779c4dac1955be8899365
+=======
+guid: 2a82dea150a2b394388860e48a701ed4
+>>>>>>> Some changes:Assets/Cinemachine/PostFX.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
