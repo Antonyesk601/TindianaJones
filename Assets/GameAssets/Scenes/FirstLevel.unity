@@ -1046,6 +1046,7 @@ GameObject:
   m_Component:
   - component: {fileID: 786011720}
   - component: {fileID: 786011719}
+  - component: {fileID: 786011721}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -1079,6 +1080,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &786011721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786011718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ef708071b1d8824a9d4d09d5ab7b1f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maincam: {fileID: 1701924122}
+  glitchcam: {fileID: 1239541597}
 --- !u!1 &907044466
 GameObject:
   m_ObjectHideFlags: 0
@@ -3198,7 +3213,6 @@ GameObject:
   - component: {fileID: 1701924121}
   - component: {fileID: 1701924120}
   - component: {fileID: 1701924119}
-  - component: {fileID: 1701924124}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -3336,20 +3350,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1701924124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1701924118}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ef708071b1d8824a9d4d09d5ab7b1f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maincam: {fileID: 1701924122}
-  glitchcam: {fileID: 1239541597}
 --- !u!224 &1730481234 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7171440418454241447, guid: 1fe640f1515c5f9438871b3645743e78,
