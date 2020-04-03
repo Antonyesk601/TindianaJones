@@ -123,6 +123,7 @@ NavMeshSettings:
   m_NavMeshData: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &92159053
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,6 +220,8 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 241294789}
   m_PrefabAsset: {fileID: 0}
+=======
+>>>>>>> parent of e112871... Merge branch 'master' of https://github.com/Antonyesk601/QuarintineJam
 =======
 >>>>>>> parent of e112871... Merge branch 'master' of https://github.com/Antonyesk601/QuarintineJam
 =======
@@ -2829,6 +2832,7 @@ TilemapCollider2D:
   m_ExtrusionFactor: 0.00001
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1455419351
 GameObject:
   m_ObjectHideFlags: 0
@@ -3004,6 +3008,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+=======
+>>>>>>> parent of e112871... Merge branch 'master' of https://github.com/Antonyesk601/QuarintineJam
 =======
 >>>>>>> parent of e112871... Merge branch 'master' of https://github.com/Antonyesk601/QuarintineJam
 =======
