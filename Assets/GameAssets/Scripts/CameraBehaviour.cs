@@ -5,17 +5,23 @@ using UnityEngine;
 public class CameraBehaviour : MonoBehaviour
 {
     public Camera maincam;
+    public Camera glitchcam;
+
     void Update()
     {
+        glitchcam.gameObject.transform.position = maincam.gameObject.transform.position;
+        glitchcam.gameObject.transform.rotation = maincam.gameObject.transform.rotation;
         StartCoroutine(screenglitch());
-        Debug.Log("coroutine finished");
     }
     IEnumerator screenglitch()
     {
-        yield return new WaitForSeconds(15);
-        maincam.cullingMask = (1 << LayerMask.NameToLayer("Invisible")&1<<LayerMask.NameToLayer("flase"));
-        Debug.Log(true);
-        yield return new WaitForSeconds(3);
-        maincam.cullingMask = (1 << LayerMask.NameToLayer("flase") & 1 << LayerMask.NameToLayer("Invisible") );
+
+        yield return new WaitForSeconds(10);
+        maincam.gameObject.SetActive(false);
+        glitchcam.gameObject.SetActive(true);
+        yield return new WaitForSeconds(2);
+        maincam.gameObject.SetActive(true);
+        glitchcam.gameObject.SetActive(false);
     }
+}
 }
