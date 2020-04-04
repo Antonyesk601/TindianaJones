@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public float speed = 5.0f;
     public float jump = 2.0f;
+    public float airbornespeed= 3f;
     [SerializeField]
     LayerMask platformMask;
 
@@ -41,10 +42,17 @@ public class PlayerMovement : MonoBehaviour
                 gm.isControllable = false;
                 GameObject.FindWithTag("UIMenu").GetComponent<Canvas>().enabled = true;
             }
+            if (isGrounded())
+            {
+                float movingSpeed = Input.GetAxis("Horizontal") * speed;
+                rigidBody.velocity = Vector2.right * movingSpeed + Vector2.up * rigidBody.velocity.y;
+            }
+            else
+            {
+                float movingSpeed = Input.GetAxis("Horizontal") * airbornespeed;
+                rigidBody.velocity = Vector2.right * movingSpeed + Vector2.up * rigidBody.velocity.y;
+            }
 
-            float movingSpeed = Input.GetAxis("Horizontal") * speed;
-
-            rigidBody.velocity = Vector2.right * movingSpeed + Vector2.up * rigidBody.velocity.y;
 
             animator.SetFloat("speed", Mathf.Abs(rigidBody.velocity.x));
             if (rigidBody.velocity.x < 0)
@@ -95,13 +103,16 @@ public class PlayerMovement : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (gm.whips > 0)
+        if (isGrounded())
         {
-            if (collision.tag == "whip")
+            if (gm.whips > 0)
             {
-                if (Input.GetKeyUp(KeyCode.X))
+                if (collision.tag == "whip")
                 {
-                    StartCoroutine(startanimation());
+                    if (Input.GetKeyUp(KeyCode.X))
+                    {
+                        StartCoroutine(startanimation());
+                    }
                 }
             }
         }

@@ -22,8 +22,9 @@ public class GameManager : MonoBehaviour
     public int lives = 3;
     public int score = 0;
     public int highScore = 0;
-    public int whips = 0;
+    public int whips = 2;
     public bool isControllable = true;
+    public bool isPlayerCharged= false;
 
     private int _level = 0;
     private static GameManager instance;
