@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isLeft = false;
     private Collider2D playerCollider;
     private GameManager gm;
-    public bool isWhipping;
+    Vector3 newposition;
 
     void Start()
     {
@@ -59,6 +59,18 @@ public class PlayerMovement : MonoBehaviour
                 rigidBody.velocity += Vector2.up * Input.GetAxis("Jump") * jump;
             }
         }
+        
+            int i = 0;
+            if (isLeft)
+            {
+                i = -1;
+            }
+            else
+            {
+                i = 1;
+            }
+            newposition = animator.gameObject.transform.position + i * new Vector3(2, 0, 0);
+        
     }
 
     private bool isGrounded()
@@ -83,21 +95,32 @@ public class PlayerMovement : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        isWhipping = false;
-        animator.SetBool("isWhipping", isWhipping);
         if (gm.whips > 0)
         {
+
             if (collision.tag == "whip")
             {
                 Debug.Log("here");
                 if (Input.GetKeyUp(KeyCode.X))
                 {
-                        spriteRenderer.flipX = isLeft;
-                        isWhipping = true;
-                        animator.SetBool("isWhipping", isWhipping);
-                        gm.whips--;
-                } 
+
+                    StartCoroutine(startanimation());
+                }
             }
         }
+        }
+    
+    IEnumerator startanimation()
+    {
+
+        animator.gameObject.transform.position = newposition + new Vector3(0, -0.5f, 0); ;
+        gm.isControllable = false;
+        animator.Play("whip");
+        animator.gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
+        gm.whips--;
+        yield return new WaitForSeconds(1);
+        gm.isControllable = true;
+        animator.gameObject.transform.position = newposition + new Vector3(0, 0.5f, 0); ;
+        animator.gameObject.GetComponent<Rigidbody2D>().isKinematic = false;
     }
 }
