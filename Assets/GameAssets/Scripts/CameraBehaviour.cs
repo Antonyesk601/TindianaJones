@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraBehaviour : MonoBehaviour
 {
     public Camera maincam;
-    public Camera glitchcam;
+ 
 
     private void Start()
     {
@@ -16,16 +16,13 @@ public class CameraBehaviour : MonoBehaviour
 
     IEnumerator screenglitch()
     {
+        int cullingmask = maincam.cullingMask;
         for (int i = 0; i < 10; i++)
         {
-            glitchcam.gameObject.transform.position = maincam.gameObject.transform.position;
-            glitchcam.gameObject.transform.rotation = maincam.gameObject.transform.rotation;
             yield return new WaitForSecondsRealtime(5);
-            maincam.gameObject.SetActive(false);
-            glitchcam.gameObject.SetActive(true);
+            maincam.cullingMask = 1 << LayerMask.NameToLayer("Invisilbe");
             yield return new WaitForSecondsRealtime(0.5f);
-            maincam.gameObject.SetActive(true);
-            glitchcam.gameObject.SetActive(false);
+            maincam.cullingMask = cullingmask;
             i--;
         }
     }

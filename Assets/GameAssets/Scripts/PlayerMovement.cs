@@ -67,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
         RaycastHit2D raycastHit = Physics2D.Raycast(playerCollider.bounds.center, Vector2.down, playerCollider.bounds.extents.y + extraHeight, platformMask);
 
         Color rayColor;
-        if(raycastHit.collider != null)
+        if (raycastHit.collider != null)
         {
             rayColor = Color.red;
         }
@@ -76,27 +76,27 @@ public class PlayerMovement : MonoBehaviour
             rayColor = Color.green;
         }
         //Debug.Log(raycastHit.collider);
-     
+
         Debug.DrawRay(playerCollider.bounds.center, Vector2.down * (playerCollider.bounds.extents.y + extraHeight), rayColor);
         return raycastHit.collider != null;
-        
+
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (Input.GetKey(KeyCode.X))
+        isWhipping = false;
+        animator.SetBool("isWhipping", isWhipping);
+        if (gm.whips > 0)
         {
-            isWhipping = false;
-            animator.SetBool("isWhipping", isWhipping);
-            Debug.Log("here");
-            if (other.tag=="whip")
+            if (collision.tag == "whip")
             {
-                isWhipping = true;
-                animator.SetBool("isWhipping", isWhipping);
-                animator.Play("whip");
-            }
-            else
-            {
-                isWhipping = false;
+                Debug.Log("here");
+                if (Input.GetKeyUp(KeyCode.X))
+                {
+                        spriteRenderer.flipX = isLeft;
+                        isWhipping = true;
+                        animator.SetBool("isWhipping", isWhipping);
+                        gm.whips--;
+                } 
             }
         }
     }
