@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -10,13 +9,16 @@ public class PlayerMovement : MonoBehaviour
 {
     public float speed = 5.0f;
     public float jump = 2.0f;
-    public float airbornespeed= 3f;
+    public float airbornespeed = 3f;
+    public bool whipRegion = false;
+
     [SerializeField]
     LayerMask platformMask;
     [SerializeField]
     LayerMask invisibleplatform;
     [SerializeField]
     LayerMask glitchingtrue;
+
     private Rigidbody2D rigidBody;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
@@ -70,18 +72,32 @@ public class PlayerMovement : MonoBehaviour
                 rigidBody.velocity += Vector2.up * Input.GetAxis("Jump") * jump;
             }
         }
-        
-            int i = 0;
-            if (isLeft)
+
+        int i = 0;
+        if (isLeft)
+        {
+            i = -1;
+        }
+        else
+        {
+            i = 1;
+        }
+        newposition = animator.gameObject.transform.position + i * new Vector3(2, 0, 0);
+
+        if (isGrounded() && whipRegion)
+        {
+            if (gm.whips > 0)
             {
-                i = -1;
+                if (rigidBody.velocity.magnitude == 0)
+                {
+                    if (Input.GetKeyUp(KeyCode.X))
+                    {
+                        whipRegion = false;
+                        StartCoroutine(startanimation());
+                    }
+                }
             }
-            else
-            {
-                i = 1;
-            }
-            newposition = animator.gameObject.transform.position + i * new Vector3(2, 0, 0);
-        
+        }
     }
 
     private bool isGrounded()
@@ -102,38 +118,19 @@ public class PlayerMovement : MonoBehaviour
         }
         bool jump;
         //Debug.Log(raycastHit.collider);
-        if (raycastHit.collider != null || raycastHitinvisible.collider != null||raycastHittrue.collider!=null)
+        if (raycastHit.collider != null || raycastHitinvisible.collider != null || raycastHittrue.collider != null)
         {
             jump = true;
         }
         else
         {
-            jump= false;
+            jump = false;
         }
         Debug.DrawRay(playerCollider.bounds.center, Vector2.down * (playerCollider.bounds.extents.y + extraHeight), rayColor);
         return jump;
 
     }
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (isGrounded())
-        {
-            if (gm.whips > 0)
-            {
-                if (collision.tag == "whip")
-                {
-                    if (gameObject.GetComponent<Rigidbody2D>().velocity.magnitude == 0)
-                    {
-                        if (Input.GetKeyUp(KeyCode.X))
-                        {
-                            StartCoroutine(startanimation());
-                        }
-                    }
-                }
-            }
-        }
-    }
-    
+
     IEnumerator startanimation()
     {
         spriteRenderer.flipX = !isLeft;
