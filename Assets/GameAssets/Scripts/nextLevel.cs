@@ -13,6 +13,7 @@ public class nextLevel : MonoBehaviour
     }
      private void Update()
         {
+
             gameObject.GetComponent<Animator>().SetBool("ischarged", ischarged);
 
         }
