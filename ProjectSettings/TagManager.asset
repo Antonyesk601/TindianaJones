@@ -7,6 +7,8 @@ TagManager:
   - UIDeath
   - whip
   - UIMenu
+  - UIOutOfLives
+  - UIWon
   layers:
   - Default
   - TransparentFX

@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadSceneAsync(value);
             _level = value;
+            whips = 2;
             if(value != 0)
             {
                 isControllable = true;
@@ -74,5 +75,7 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
         isControllable = true;
+        score = 0;
+        whips = 2;
     }
 }

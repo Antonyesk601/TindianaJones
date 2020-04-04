@@ -257,7 +257,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Lifes: 3'
+  m_Text: 'Lives: 3'
 --- !u!114 &2334572915076655853
 MonoBehaviour:
   m_ObjectHideFlags: 0
