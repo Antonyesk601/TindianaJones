@@ -7,8 +7,12 @@ public class isCharged : MonoBehaviour
 {
     public bool ischarged =true;
     private GameManager gm;
+    private void Start()
+    {
+        gm = GameManager.Instance;
+    }
     private void OnTriggerEnter2D(Collider2D collision)
-    {if (collision.tag == "player")
+    {if (collision.tag == "Player")
         {
             if (ischarged)
             {
