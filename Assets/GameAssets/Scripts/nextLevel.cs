@@ -11,10 +11,12 @@ public class nextLevel : MonoBehaviour
     {
         gm = GameManager.Instance;
     }
-    void Update()
-    {
+     private void Update()
+        {
+            gameObject.GetComponent<Animator>().SetBool("ischarged", ischarged);
 
-    }
+        }
+    
     private void OnTriggerEnter2D(Collider2D collision)
     { if (opendoor.ischarged) {
             ischarged = true;
