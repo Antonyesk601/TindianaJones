@@ -56,9 +56,18 @@ public class GameManager : MonoBehaviour
 
     public void Die()
     {
+        if (!isControllable) return;
+
         lives--;
         isControllable = false;
-        GameObject.FindWithTag("UIDeath").GetComponent<Canvas>().enabled = true;
+        if(lives != 0)
+        {
+            GameObject.FindWithTag("UIDeath").GetComponent<Canvas>().enabled = true;
+        }
+        else
+        {
+            GameObject.FindWithTag("UIOutOfLives").GetComponent<Canvas>().enabled = true;
+        }
     }
 
     public void Retry()
