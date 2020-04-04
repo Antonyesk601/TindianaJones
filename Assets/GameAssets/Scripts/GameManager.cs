@@ -78,4 +78,10 @@ public class GameManager : MonoBehaviour
         score = 0;
         whips = 2;
     }
+
+    public void Win()
+    {
+        isControllable = false;
+            GameObject.FindWithTag("UIWon").GetComponent<Canvas>().enabled = true;
+    }
 }

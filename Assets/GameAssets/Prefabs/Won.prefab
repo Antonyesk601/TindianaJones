@@ -323,7 +323,7 @@ GameObject:
   - component: {fileID: 1597988023719008248}
   m_Layer: 5
   m_Name: Won
-  m_TagString: UIMenu
+  m_TagString: UIWon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
