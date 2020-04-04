@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class nextLevel : MonoBehaviour
 {
@@ -11,25 +9,27 @@ public class nextLevel : MonoBehaviour
     {
         gm = GameManager.Instance;
     }
-     private void Update()
-        {
+    private void Update()
+    {
 
-            gameObject.GetComponent<Animator>().SetBool("ischarged", ischarged);
+        gameObject.GetComponent<Animator>().SetBool("ischarged", ischarged);
 
-        }
-    
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
-    { if (opendoor.ischarged) {
+    {
+        if (opendoor.ischarged)
+        {
             ischarged = true;
             if (collision.tag == "Player")
-                 {
-                    gm.Win();
-                }
+            {
+                gm.Win();
+            }
             else
             {
                 ischarged = false;
             }
-        
+
         }
     }
 }
