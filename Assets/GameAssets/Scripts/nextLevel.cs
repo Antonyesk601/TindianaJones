@@ -5,6 +5,8 @@ using UnityEngine;
 public class nextLevel : MonoBehaviour
 {
     GameManager gm;
+    public isCharged opendoor;
+    bool ischarged;
     private void Start()
     {
         gm = GameManager.Instance;
@@ -14,16 +16,17 @@ public class nextLevel : MonoBehaviour
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "Player")
-        {
-            if (Input.GetKeyUp(KeyCode.C))
-            {
-                if (gameObject.GetComponent<isCharged>().ischarged)
-                {
+    { if (opendoor.ischarged) {
+            ischarged = true;
+            if (collision.tag == "Player")
+                 {
                     gm.Win();
                 }
+            else
+            {
+                ischarged = false;
             }
+        
         }
     }
 }

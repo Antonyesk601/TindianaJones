@@ -21,8 +21,6 @@ public class isCharged : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            if (Input.GetKey(KeyCode.X))
-            {
                 if (ischarged)
                 {
                     ischarged = false;
@@ -37,7 +35,7 @@ public class isCharged : MonoBehaviour
 
                     }
                 }
-            }
+            
         }
     }
 }

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8489051116995714007}
   - component: {fileID: 8489051116995714004}
   - component: {fileID: 8489051116995714005}
-  - component: {fileID: 8489051116995714002}
   - component: {fileID: 5906663462793711269}
   - component: {fileID: 5088082631997581398}
   m_Layer: 0
@@ -104,19 +103,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &8489051116995714002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8489051116995714003}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6991d8eb92e51004d9ac722e5a11b63a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ischarged: 0
 --- !u!61 &5906663462793711269
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -155,3 +141,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9721ae5fb552f94a93baa9798e863e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  opendoor: {fileID: 0}
