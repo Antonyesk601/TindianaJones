@@ -89,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
         RaycastHit2D raycastHitinvisible = Physics2D.Raycast(playerCollider.bounds.center, Vector2.down, playerCollider.bounds.extents.y + extraHeight, invisibleplatform);
 
         Color rayColor;
-        if (raycastHit.collider != null)
+        if (raycastHit.collider != null||raycastHitinvisible.collider!=null)
         {
             rayColor = Color.red;
         }
@@ -97,10 +97,18 @@ public class PlayerMovement : MonoBehaviour
         {
             rayColor = Color.green;
         }
+        bool jump;
         //Debug.Log(raycastHit.collider);
-
+        if (raycastHit.collider != null || raycastHitinvisible.collider != null)
+        {
+            jump = true;
+        }
+        else
+        {
+            jump= false;
+        }
         Debug.DrawRay(playerCollider.bounds.center, Vector2.down * (playerCollider.bounds.extents.y + extraHeight), rayColor);
-        return raycastHit.collider != null;
+        return jump;
 
     }
     private void OnTriggerStay2D(Collider2D collision)
