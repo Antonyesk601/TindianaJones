@@ -18,22 +18,23 @@ public class isCharged : MonoBehaviour
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
-    {if (collision.tag == "Player")
+    { if (collision.tag == "Player")
         {
-            if (ischarged)
-            {
-                ischarged = false;
-                gm.isPlayerCharged = true;
-            }
-            else
-            {
-                if (gm.isPlayerCharged)
+            if (Input.GetKeyUp(KeyCode.X)) {
+                if (ischarged)
                 {
-                    ischarged = true;
-                    gm.isPlayerCharged = false;
+                    ischarged = false;
+                    gm.isPlayerCharged = true;
+                }
+                else
+                {
+                    if (gm.isPlayerCharged)
+                    {
+                        ischarged = true;
+                        gm.isPlayerCharged = false;
 
+                    }
                 }
             }
         }
     }
-}
