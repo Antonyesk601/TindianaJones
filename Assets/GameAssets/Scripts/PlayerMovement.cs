@@ -97,22 +97,19 @@ public class PlayerMovement : MonoBehaviour
     {
         if (gm.whips > 0)
         {
-
             if (collision.tag == "whip")
             {
-                Debug.Log("here");
                 if (Input.GetKeyUp(KeyCode.X))
                 {
-
                     StartCoroutine(startanimation());
                 }
             }
         }
-        }
+    }
     
     IEnumerator startanimation()
     {
-
+        spriteRenderer.flipX = !isLeft;
         animator.gameObject.transform.position = newposition + new Vector3(0, -0.5f, 0); ;
         gm.isControllable = false;
         animator.Play("whip");
@@ -122,5 +119,7 @@ public class PlayerMovement : MonoBehaviour
         gm.isControllable = true;
         animator.gameObject.transform.position = newposition + new Vector3(0, 0.5f, 0); ;
         animator.gameObject.GetComponent<Rigidbody2D>().isKinematic = false;
+        spriteRenderer.flipX = !isLeft;
+
     }
 }
