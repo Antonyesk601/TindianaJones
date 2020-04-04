@@ -8,7 +8,7 @@ public class chargedtile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameObject.SetActive(false);   
+        gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -16,12 +16,27 @@ public class chargedtile : MonoBehaviour
     {
         if (activate.ischarged)
         {
-            gameObject.SetActive(true);
-            
+            if (gameObject.transform.GetChild(0).gameObject.name=="spikeholder")
+            {
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.SetActive(false);
+            }
+            else
+            {
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.SetActive(true);
+
+            }
         }
         else
         {
-            gameObject.SetActive(false);
+            if (gameObject.transform.GetChild(0).gameObject.name == "spikeholder")
+            {
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.SetActive(true);
+            }
+            else
+            {
+                gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.SetActive(false);
+
+            }
         }
     }
 }
