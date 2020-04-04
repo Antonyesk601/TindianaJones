@@ -148,6 +148,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chargedtile
       objectReference: {fileID: 0}
+    - target: {fileID: 2295425875352388030, guid: 677196f0f56553a458e57793d38acf5d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2295425875352388017, guid: 677196f0f56553a458e57793d38acf5d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 677196f0f56553a458e57793d38acf5d, type: 3}
