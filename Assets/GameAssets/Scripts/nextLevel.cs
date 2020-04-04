@@ -4,15 +4,26 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class nextLevel : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    GameManager gm;
+    private void Start()
     {
-        
+        gm = GameManager.Instance;
     }
-
-    // Update is called once per frame
     void Update()
     {
-        
+
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            if (Input.GetKeyUp(KeyCode.C))
+            {
+                if (gameObject.GetComponent<isCharged>().ischarged)
+                {
+                    gm.Win();
+                }
+            }
+        }
     }
 }
