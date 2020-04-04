@@ -61,7 +61,9 @@ public class GameManager : MonoBehaviour
 
         lives--;
         isControllable = false;
-        if(lives != 0)
+
+        GameObject.FindWithTag("UIDeath").GetComponent<AudioSource>().Play();
+        if (lives != 0)
         {
             GameObject.FindWithTag("UIDeath").GetComponent<Canvas>().enabled = true;
         }
