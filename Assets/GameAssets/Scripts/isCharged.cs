@@ -1,11 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-    [RequireComponent(typeof(Animator))]
-    [RequireComponent(typeof(BoxCollider2D))]
+[RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(BoxCollider2D))]
 public class isCharged : MonoBehaviour
 {
-    public bool ischarged =true;
+    public bool ischarged = true;
     private GameManager gm;
     private void Start()
     {
@@ -18,9 +18,11 @@ public class isCharged : MonoBehaviour
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
-    { if (collision.tag == "Player")
+    {
+        if (collision.tag == "Player")
         {
-            if (Input.GetKeyUp(KeyCode.X)) {
+            if (Input.GetKeyUp(KeyCode.X))
+            {
                 if (ischarged)
                 {
                     ischarged = false;
@@ -38,3 +40,4 @@ public class isCharged : MonoBehaviour
             }
         }
     }
+}
