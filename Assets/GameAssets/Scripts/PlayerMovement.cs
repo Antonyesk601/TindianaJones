@@ -13,7 +13,8 @@ public class PlayerMovement : MonoBehaviour
     public float airbornespeed= 3f;
     [SerializeField]
     LayerMask platformMask;
-
+    [SerializeField]
+    LayerMask invisibleplatform;
     private Rigidbody2D rigidBody;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
@@ -85,6 +86,7 @@ public class PlayerMovement : MonoBehaviour
     {
         float extraHeight = 0.01f;
         RaycastHit2D raycastHit = Physics2D.Raycast(playerCollider.bounds.center, Vector2.down, playerCollider.bounds.extents.y + extraHeight, platformMask);
+        RaycastHit2D raycastHitinvisible = Physics2D.Raycast(playerCollider.bounds.center, Vector2.down, playerCollider.bounds.extents.y + extraHeight, invisibleplatform);
 
         Color rayColor;
         if (raycastHit.collider != null)

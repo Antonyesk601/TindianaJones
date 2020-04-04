@@ -309,6 +309,11 @@ PrefabInstance:
       propertyPath: jump
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1350337036287756716, guid: e141147a1584d8340a412138365acb1e,
+        type: 3}
+      propertyPath: invisibleplatform.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e141147a1584d8340a412138365acb1e, type: 3}
 --- !u!1 &282768342
