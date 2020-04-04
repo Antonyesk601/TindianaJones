@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
     [RequireComponent(typeof(Animator))]
-
+    [RequireComponent(typeof(BoxCollider2D))]
 public class isCharged : MonoBehaviour
 {
     public bool ischarged =true;
@@ -10,6 +10,12 @@ public class isCharged : MonoBehaviour
     private void Start()
     {
         gm = GameManager.Instance;
+        gameObject.gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
+    }
+    private void Update()
+    {
+        gameObject.GetComponent<Animator>().SetBool("ischarged", ischarged);
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {if (collision.tag == "Player")
@@ -17,7 +23,6 @@ public class isCharged : MonoBehaviour
             if (ischarged)
             {
                 ischarged = false;
-                gameObject.GetComponent<Animator>().SetBool("ischarged",ischarged);
                 gm.isPlayerCharged = true;
             }
             else
@@ -26,7 +31,6 @@ public class isCharged : MonoBehaviour
                 {
                     ischarged = true;
                     gm.isPlayerCharged = false;
-                    gameObject.GetComponent<Animator>().SetBool("ischarged", ischarged);
 
                 }
             }
