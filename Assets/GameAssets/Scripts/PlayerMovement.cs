@@ -122,9 +122,12 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (collision.tag == "whip")
                 {
-                    if (Input.GetKeyUp(KeyCode.X))
+                    if (gameObject.GetComponent<Rigidbody2D>().velocity.magnitude == 0)
                     {
-                        StartCoroutine(startanimation());
+                        if (Input.GetKeyUp(KeyCode.X))
+                        {
+                            StartCoroutine(startanimation());
+                        }
                     }
                 }
             }

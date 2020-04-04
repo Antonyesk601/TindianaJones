@@ -22,9 +22,12 @@ public class isCharged : MonoBehaviour
         if (collision.tag == "Player")
         {
                 if (ischarged)
+            {
+                if (gm.isPlayerCharged ==false )
                 {
                     ischarged = false;
                     gm.isPlayerCharged = true;
+                }
                 }
                 else
                 {
