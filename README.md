@@ -1,4 +1,4 @@
-# The adventures of Tindiana Jones
+# The Adventures of Tindiana Jones
 
 ![Cover](docs/cover.png)
 
